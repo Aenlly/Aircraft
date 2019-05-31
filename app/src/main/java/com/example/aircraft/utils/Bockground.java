@@ -20,7 +20,7 @@ class constant {
     public static float bili;//比例，用于适应不同屏幕
     public static Vector<hj> list = new Vector<hj>();//所有飞行物的集合,添加进这个集合才能被画出来
     public static Vector<hj> drlist = new Vector<hj>();//敌人飞机的集合，添加进这个集合才能被子弹打中
-    //我集合学的挺烂的哈 为什么用Vector呢？因为他线程是安全的。。。
+
     public static Bitmap myhj, drhj, bj, myzd;//图片：我的灰机 敌人灰机 背景 我的子弹
     public static myhj my;//我的灰机
     public static bj b;//背景
@@ -101,12 +101,10 @@ public class Bockground extends View {//画
             while(true){
                 try { Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
                 postInvalidate();//刷新画布
-                //就是这个东西拖了我一天
                 //swing是repaint()方法刷新的
                 //然后这里没有repaint方法
-                //然后突然想起C#有一个invalidate()方法是刷新画布的
+                //C#有一个invalidate()方法是刷新画布的
                 //然后这线程里用invalidate()会闪退.....
-                //烦死了
             }
         }
     }
